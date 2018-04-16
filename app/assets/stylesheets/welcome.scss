@@ -1,0 +1,613 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+$font-color: #383838;
+$bg-primary-color: #fff;
+$left-pane-color:#ffd500;
+$right-pane-color:#F29637;
+$save-button-color: #60e6c5;
+$form-input-bg-color:#f5f8f9;
+$form-container-color:#ffffff;
+
+
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+
+  @mixin right-pane{
+    float: right;
+    width: 60%;
+    height: 89.2rem;
+    border-radius: 0 4.25rem 4.25rem 0;
+  }
+
+  @mixin right-pane-mobile{
+    display: block;
+    width: 100%;
+    height: 89.2rem;
+    border-radius: 0;
+  }
+
+  @mixin animation-settings($seconds, $action){
+    animation-duration: $seconds;
+    animation-fill-mode: $action;
+  }
+
+  .clearfix{
+    clear: both;
+ }
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: "Arial", sans-serif;
+    font-weight: 400;
+    color:$font-color;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    padding: 3rem;
+    box-sizing: border-box;
+    font-family: Arial;
+    font-size: 2.2rem;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.26;
+    letter-spacing: normal;
+    text-align: center;
+    background-color: $bg-primary-color;
+    margin: 6.6rem 3.6rem;
+
+    h1{
+        font-size: 3.6rem;
+    }
+
+    a{
+        text-decoration: underline;
+        color: $font-color;
+        font-weight: bold;
+    }
+}
+.container{
+    position: relative;
+    margin: auto;
+    max-width: 136rem;
+    height: 89.2rem;
+    @include border-radius(4.25rem); 
+    background-color: $bg-primary-color;
+
+    .left-pane{
+        float: left;
+        width: 40%;
+        height: 89.2rem;
+        border-radius: 4.25rem 0 0 4.25rem;
+        background-color:$left-pane-color;
+
+        .slider-arrow{
+            position: relative;
+            top:13em;
+            cursor: pointer;
+            width: 64px;  
+            height: 64px;          
+            margin: auto;
+            background: url(/images/oval_open.png) no-repeat scroll 0rem 0rem;
+        }
+
+        .avatar-container-img{
+            width: 23.8rem;
+            height: 23.8rem;
+            object-fit: contain;
+            position: relative;
+            top: 16.3rem;
+        }
+
+        .description{
+            position: relative;
+            margin: auto;
+            top: 20rem;
+            width: 35.7rem;
+            font-family: Arial;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: font-color;
+
+            .description-title{
+                font-size: 3.6rem;
+                font-weight: bold;
+                display: block;
+                margin-bottom: 1.7rem;
+                margin-top: 6.7rem;
+            }
+    
+            .description-sub{
+                display: block;
+                font-size: 2.2rem;
+            }
+        }
+
+        
+
+    }
+
+    .right-pane{
+        @include right-pane;
+        background-color: $bg-primary-color;
+
+        .right-pane-content{
+            margin: 16.1rem 10rem;
+            text-align: left;
+
+            .right-pane-title{
+                font-size: 3.6rem;
+            }
+
+            .right-pane-description{
+                font-size: 1.8rem;
+                line-height: 1.53;
+            }
+        }
+
+        .form-container{
+            width: 80%;
+            margin: auto;
+            background-color:$form-container-color;
+
+            #form{
+                margin-top: 7em;
+                text-align: left;
+                position: relative;
+
+                div{
+                    margin: 1.4rem 0;
+
+                }
+
+                .form-labels{
+
+                }
+
+                label{
+                    font-size: 16px;
+
+
+                    span{
+                        font-size: 16px;
+                        
+                    }
+                }
+
+                .gender-radio input{
+                    font-size: 1.6rem;
+                }
+
+                .gender-radio{
+
+                    margin: 0rem 0 4rem 0;
+
+                    
+
+                    .span{
+                        color: #b1bfcd;
+                    }
+
+                    .inline-radio{
+                        display: inline-block;
+                        position: relative;
+                        top: 36px;
+                    }
+                }
+
+                #membership{
+
+                    .classic-card.card-icon-icon{
+                        margin-left: 15rem;
+                    }
+
+                    .card-icon-icon{
+                        background: url(/images/card.png) no-repeat scroll 0rem 0rem;
+                        height: 5.3rem;
+                        width: 5.4rem;
+                        display: inline-block;
+                        position: relative;
+                        margin: 0;
+                        top: 19px;
+                        cursor: pointer;
+                    }
+
+                    .card-icon-icon:hover{
+                        background: url(/images/card-hover-active.png) no-repeat scroll 0rem 0rem;
+                    }
+
+                    .card-icon-icon.card-classic{
+                        margin-left: 15rem;
+                    }
+
+                    
+                    
+                }
+
+                
+
+                
+
+                input{
+                    width: 38.09rem;
+                    height: 5.3rem;
+                    border-radius: .53rem;
+                    background-color: $form-input-bg-color;
+                    font-size: 16px;
+                    padding-left: 20px;
+                    border: 0px;
+                    float: right;
+                    margin-bottom: 2rem;
+
+                }
+
+                input:hover, :focus{
+                    background-color: rgba(245, 248, 249, 0.3);
+                    -webkit-transition: background-color 0.2s ease-in-out;transition: background-color 0.2s ease-in-out;  
+                }
+
+                .male-img{
+                    background: url(/images/male.png) no-repeat scroll 0rem 0rem;
+                    height: 5.3rem;
+                    width: 5.4rem;
+                    margin-left: 18rem;
+                }
+
+                .female-img{
+                    background: url(/images/female.png) no-repeat scroll 0rem 0rem;
+                    height: 5.3rem;
+                    width: 5.4rem;
+                }
+
+                .male-img:hover{
+                    background: url(/images/male-hover.png) no-repeat scroll 0rem 0rem;
+                }
+
+                .female-img:hover{
+                    background: url(/images/female-hover.png) no-repeat scroll 0rem 0rem;
+                }
+
+
+                
+
+
+                input[type="radio"]{
+                    -webkit-appearance: radio;
+                    box-sizing: border-box;
+                    width: 2rem;
+                    cursor: pointer;
+                    display: none;
+                }
+
+                input[type="date"]{
+                    background: url(/images/calender.svg) no-repeat scroll 37rem 1.7rem;   
+                    background-color: $form-input-bg-color;
+                }
+
+                .form-buttons-container{
+                    text-align: right;
+                    margin-top: 3em;    
+
+                    .form-buttons{
+                        cursor: pointer;
+                        width: 15.87rem;
+                        height: 5,3rem;
+                        border-radius: .53rem;
+                        font-size: 1.6rem;
+                        border: none;
+                        background-color: $form-input-bg-color
+                    }
+
+                    .form-buttons.form-buttons-cancel{
+                        background-color: $form-input-bg-color;
+                        margin-right: 2rem;
+                        -webkit-transition: background-color 0.2s ease-in-out;transition: background-color 0.2s ease-in-out;  
+                    }
+
+                    .form-buttons.form-buttons-save{
+                        background-color: $save-button-color;
+                        color: #ffffff;
+                        -webkit-transition: background-color 0.2s ease-in-out;transition: background-color 0.2s ease-in-out; 
+                    }
+
+                    .form-buttons.form-buttons-cancel:hover{
+                        background-color: #cad7dd;
+                    }
+
+                    .form-buttons.form-buttons-save:hover{
+                        background-color: #49c8a8;
+                    }
+                    
+    
+                    
+                }
+            }
+
+        }
+        
+    }
+
+    .right-pane.cover{
+        @include right-pane;
+        position: absolute;
+        right: 0;
+        background-color: $right-pane-color;
+    }
+
+    .right-pane.cover.animate-right{
+        animation: moveOutRight;
+        @include animation-settings(3s, forwards);
+        
+    }
+
+    .right-pane.cover.animate-left{
+        animation: moveInLeft;
+        @include animation-settings(3s, forwards);
+    }
+
+    .right-pane.cover.animate-up{
+        animation: moveInUp;
+        @include animation-settings(3s, forwards);
+    }
+
+    .right-pane.cover.animate-down{
+        animation: moveOutDown;
+        @include animation-settings(3s, forwards);
+    
+    }
+
+
+    
+}
+
+
+
+@keyframes moveInUp {
+    0% {
+        transform: translateY(108rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveOutDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(108rem);
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        transform: translateX(80rem);
+        
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveOutRight {
+    0% {
+        transform: translateX(0);        
+    }
+
+    100% {
+        transform: translateX(80rem);
+    }
+}
+
+@media (max-width: 120rem) {
+    .container{
+
+        .left-pane{
+
+            .description{
+                width: 27.7rem;
+            }
+
+            .slider-arrow{
+                top: 23rem;
+            }
+        }
+
+        .right-pane{
+            height: 108rem;
+            .form-container{
+
+                #form{
+                    margin-top: 2rem;
+
+                    #membership{
+
+                        .classic-card.card-icon-icon{
+                            margin-left: 2rem;
+                        }
+                    }
+
+                    .male-img{
+                        // margin-left: 5rem;
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 97.5rem) {
+    body{
+        .container{
+
+            .left-pane{
+    
+                .slider-arrow{
+                    background: url(/images/oval_open_down.png) no-repeat scroll 0rem 0rem;
+                    top: 23rem;
+                }
+            }
+
+            .right-pane{
+                height: 89.2rem;
+
+                .form-container{
+
+                    #form{
+                        margin-top: 2rem;
+
+                        .male-img{
+                            // margin-left: 0;
+                        }
+                        
+                    }
+                }
+            }
+            .right-pane.cover{
+
+                height: 89.2rem;
+                top: 0;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 60.9rem) {
+    
+    body{
+        padding: 0;
+        margin: 0;
+
+        .container{
+            .left-pane{
+                float: left;
+                max-width: 100%;
+                width: 100%;
+                height: 89.2rem;
+                position: relative;
+                border-radius: 0;
+                background-color: $left-pane-color;
+            }
+    
+            .right-pane{
+                @include right-pane-mobile;
+                height: 108rem;
+                .form-container{
+
+                    #form{
+                        margin-top: 2rem;
+
+                        .male-img{
+                            margin-left: 0;
+                        }
+                        
+                    }
+                }
+            }
+            .right-pane.cover{
+                @include right-pane-mobile;
+                height: 108rem;
+                top: 892px;
+            }
+        }
+    }
+
+  }
+
+@media (max-width: 40.9rem) {
+
+    .container {
+
+        .left-pane{
+
+            .description{
+                width: 28.2rem;
+                top: 16rem;
+
+                .description-title{
+                    margin-bottom: 3.7rem;
+                }
+            }
+
+            .avatar-container-img{
+                top: 13.3rem;
+            }
+
+            .slider-arrow{
+                position: relative;
+                top:9em;
+                cursor: pointer;
+                width: 6.4rem;            
+                margin: auto;
+            }
+
+            
+        }
+
+        .right-pane{
+
+            .right-pane-content{
+                margin: 6.1rem 3rem;
+                text-align: left;
+            }
+
+            .form-container{
+
+                #form{
+
+                    #membership{
+
+                        .classic-card.card-icon-icon{
+                            margin-left: 0;
+                        }
+                    }
+
+                    input{
+                        width: 100%;
+                    }
+
+                    .form-buttons-container{
+    
+                        .form-buttons{
+                            width: 100%;
+                        }
+
+                        .form-buttons.form-buttons-cancel{
+                            margin-right: 0px;
+                        }
+                    }
+                }
+            }            
+
+            
+        }
+    }
+
+}
+
+  
+
